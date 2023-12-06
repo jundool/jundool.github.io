@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Impermanent Loss Calculator</title>
+
+    <link href="index.css" rel="stylesheet" />
+
+    <style>
+        .calculator {
+            width: 420px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .loss {
+            color: black;
+        }
+        .positive {
+            color: blue;
+        }
+        .negative {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        When depositing two coins into a liquidity pool, this calculator provides an estimate<br> of the impermanent loss incurred.<br>
+         (not taking into account fees and other variables).<br>
+         Just before depositing into the liquidity pool, you can check the results by entering<br> the quantities of coins A and B, the current dollar price, the subsequently<br> changed dollar price, and then clicking<br> the 'Calculate' button.
+         In a liquidity pool, the ratio adjusts closer to 1:1 in response<br> to price movements. As the dollar value of each coin changes and the quantity<br> of coins fluctuates, impermanent losses occur due to price fluctuations upon<br> depositing into the liquidity pool. These results are expressed as final dollar values.
+
+    <div class="calculator">
+        <h2>Impermanent Loss Calculator</h2>
+        <label for="coin1Amount">Coin A quantity:</label>
+        <input type="number" id="coin1Amount"><br><br>
+        <label for="coin1InitialPrice">Coin A Initial Price $:</label>
+        <input type="number" id="coin1InitialPrice"><br><br>
+        <label for="coin1NewPrice">Coin A Changed Price $:</label>
+        <input type="number" id="coin1NewPrice"><br><br>
+        <label for="coin2Amount">Coin B quantity:</label>
+        <input type="number" id="coin2Amount"><br><br>
+        <label for="coin2InitialPrice">Coin B Initial Price $:</label>
+        <input type="number" id="coin2InitialPrice"><br><br>
+        <label for="coin2NewPrice">Coin B Changed Price $:</label>
+        <input type="number" id="coin2NewPrice"><br><br>
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="result">
+            <h3>Result:The ratio is adjusted close to 1:1</h3>
+            <p>Changed Coin A Dollar Value: <span id="changedCoin1DollarValue"></span></p>
+            <p>Changed Coin B Dollar Value: <span id="changedCoin2DollarValue"></span></p>
+            <p>Changed Coin A quantity: <span id="changedCoin1Amount"></span></p>
+            <p>Changed Coin B quantity: <span id="changedCoin2Amount"></span></p>
+            <p class="loss">Impermanent Loss: <span id="impermanentLoss"></span></p>
+        </div>
+    </div>
+
+    <script src="ImpermanentLoss.js"></script>
+</body>
+</html>

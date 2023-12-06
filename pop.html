@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* CSS 코드 */
+        .highlight {
+          background-color: yellow; /* 글자 배경색을 노란색으로 설정 */
+        }
+      </style>
+
+<link href="index.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <a href="./pop/list.html">List Description</a>
+    
+    <div>
+        <p style="font-size: 20x;">When you access the Internet, you may be at a loss as to what to choose from the abundance of information.<br>
+            I would like to remember the music I heard on the radio a long time ago and list my personal favorites one by one using the knowledge I naturally acquired while collecting albums and music.<br>
+            I thought about linking the list directly, but since copyright issues may arise, I will continuously update the list and provide a brief description of each POP.<br>
+            If you search YouTube using this list, you will be happy to be able to enjoy music anytime, anywhere.
+        </p>
+       </div>
+    <h2></h2> <!-- 공백 -->
+
+    <h5> <font color="red"><p><font color="blue">TIP<br></font>Search with <spen class="highlight">Ctrl + F<br></spen>In the mobile Chrome browser, when you long-press the title list, it enables an automatic search on YouTube</font></h5>
+
+
+    <table id="dataTable" border="2">
+        <!-- 테이블 헤더 -->
+        <thead>
+            <tr>
+                <th>Artist Name</th>
+                <th>Song Name</th>
+                <th>Year</th>
+                <!-- 추가적인 열들 -->
+            </tr>
+        </thead>
+        <!-- 테이블 내용 -->
+        <tbody>
+            <!-- 데이터가 여기에 추가될 것입니다. -->
+        </tbody>
+    </table>
+
+    <script>
+        // CSV 파일의 경로
+        const csvFilePath = 'pop.csv';
+
+        // CSV 파일을 읽어와서 데이터를 처리하는 함수
+        function processData(allText) {
+            const allLines = allText.split('\n');
+            const table = document.getElementById('dataTable');
+            const tbody = table.getElementsByTagName('tbody')[0];
+
+            for (let i = 0; i < allLines.length; i++) {
+                const row = document.createElement('tr');
+                const data = allLines[i].split(',');
+                for (let j = 0; j < data.length; j++) {
+                    const cell = document.createElement(i === 0 ? 'th' : 'td');
+                    cell.textContent = data[j];
+                    row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+            }
+        }
+
+        // CSV 파일을 가져와서 데이터 처리를 실행
+        fetch(csvFilePath)
+            .then(response => response.text())
+            .then(text => processData(text))
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+
+
+</body>
+</html>
