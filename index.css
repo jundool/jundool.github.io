@@ -1,0 +1,21 @@
+
+div { color: black;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.5;
+      background-color: white;
+      padding: 1px;
+      margin: 1px;
+      border: 1px;
+     }
+/* 모든.html 에 대한 기본 css 요소적용 */
+
+
+table {
+      font-size: 13px; /* 원하는 크기로 설정 */
+  }
+
+  
+  
