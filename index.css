@@ -1,0 +1,68 @@
+/* 1.모든.html 에 대한 기본 css 요소적용 */
+div { color: black;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.5;
+      background-color: white;
+      padding: 0x;
+      margin: 5x;
+      border: 0px;
+     }
+/* 모든.html 에 대한 기본 css 요소적용 */
+
+
+
+/* 2.csv파맇 목록 테이블 ost, pop 대한 css 요소적용 */
+table {
+      font-size: 13px; /* 원하는 크기로 설정 */
+  }
+/* csv파맇 목록 테이블 ost, pop 대한 css 요소적용 */  
+
+
+  
+/* 3.index.html 메인파일에 사이드바 레이아웃 적용 작업중 https://www.youtube.com/watch?v=qZw_jBE0dEk */
+:root {
+      --gap: 1px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 1px auto;
+    }
+    
+    body {
+      background-color: white;
+    }
+    
+    
+    .box {
+      background-color: white;
+      padding: var(--gap);
+      display: flex;
+      gap: var(--gap);
+      min-height: 600px;
+      flex-direction: row;
+    }
+    
+    .box.align_right {
+      flex-direction: row-reverse;
+    }
+    
+    .box-sidebar,
+    .box-contents {
+      background-color: white;
+      padding: var(--gap);
+    }
+    
+    .box-sidebar {
+      width: 117px;
+      flex-shrink: 0;
+    }
+    
+    .box-contents {
+      flex-grow: 1;
+      min-width: 0;
+    }
+    
