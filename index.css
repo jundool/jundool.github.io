@@ -88,7 +88,7 @@ table {
   nav a {
       text-decoration: none; /* 텍스트 밑줄 */
       color:black;
-      margin: 0.5m; /* 텍스트간 공간 */
+      margin: 0.5em; /* 텍스트간 공간 */
       font-size: 1em;
   }
   
