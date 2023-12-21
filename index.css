@@ -129,3 +129,19 @@ header {
   padding: 0px ;
 }
 /* 5.nav 상단메뉴 고정 */
+
+
+/* 6.버튼 스타일 */
+button {
+  padding: 2px 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px; /* 버튼 간격 설정 */
+}
+button:hover {
+  background-color: #45a049;
+}
+/* 6.버튼 스타일 */
