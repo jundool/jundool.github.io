@@ -118,7 +118,8 @@
 
 <!-- HTML 엑셀 데이타 테이블과 검색창 input, button 스크립트_배치를 테이블 데이타 시작하는 위치에서 바로위에 배치 -->
 
-
+<div id="counterDisplay">Number of list items: <span id="listItemCount">0</span></div>
+<div id="tableContainer"></div>
 
   <!-- XLSX 파일, 시트 추가 -->  
   <div id="tableContainer"></div>
@@ -130,37 +131,38 @@
     var hardcodedSheetName = 'pop'; // 시트명
 
     var tableContainer = document.getElementById('tableContainer');
-    var originalTableContent = ''; // 초기 테이블 데이터 저장 변수
+    var originalTableContent = '';
+    var itemCountDisplay = document.getElementById('listItemCount'); 
 
     var req = new XMLHttpRequest();
     req.open("GET", hardcodedFileName, true);
     req.responseType = "arraybuffer";
 
     req.onload = function(e) {
-      var data = new Uint8Array(req.response);
-      var workbook = XLSX.read(data, { type: "array" });
+    var data = new Uint8Array(req.response);
+    var workbook = XLSX.read(data, { type: "array" });
+    var sheet = workbook.Sheets[hardcodedSheetName];
+    var sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-      var sheet = workbook.Sheets[hardcodedSheetName];
-      var sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+    var table = document.createElement('table');
+    table.classList.add('excel-table');
+    var itemCount = sheetData.length - 1; // 목록 항목 수에서 1을 뺌
 
-      var table = document.createElement('table');
-      table.classList.add('excel-table');
+    sheetData.forEach(function(rowData, rowIndex) {
+    var row = document.createElement('tr');
+    rowData.forEach(function(cellData, cellIndex) {
+    var cell = document.createElement(rowIndex === 0 ? 'th' : 'td');
+    cell.textContent = cellData;
+    row.appendChild(cell);
+    });
+    table.appendChild(row);
+    });
 
-      sheetData.forEach(function(rowData, rowIndex) {
-        var row = document.createElement('tr');
-        rowData.forEach(function(cellData, cellIndex) {
-          var cell = document.createElement(rowIndex === 0 ? 'th' : 'td');
-          cell.textContent = cellData;
-          row.appendChild(cell);
-        });
-        table.appendChild(row);
-      });
-
-      tableContainer.appendChild(table);
-      originalTableContent = tableContainer.innerHTML; // 초기 테이블 데이터 저장
-    };
-
-    req.send();
+  tableContainer.appendChild(table);
+  originalTableContent = tableContainer.innerHTML;
+  itemCountDisplay.textContent = itemCount; // 항목 수를 표시
+};
+req.send();
 // XLSX 파일, 시트 추가 // 
 
 
