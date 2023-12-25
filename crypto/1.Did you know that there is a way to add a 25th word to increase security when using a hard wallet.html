@@ -5,127 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="../index.js"></script>
+    <link href="../index.css" rel="stylesheet" type="text/css"/>
+
     <style>
-        /* CSS 코드 */
-        .highlight {
-          background-color: yellow; /* 글자 배경색을 노란색으로 설정 */
-        }
-      </style>
+      /* 링크된 텍스트의 기본 스타일 설정 */
+      a {
+          font-size: 13px; /* 링크된 텍스트의 기본 크기 설정 */
+          /* 다른 원하는 스타일도 추가 가능 */
+      }
+  </style>
 
-<script src="../index.js"></script>
-<link href="../index.css" rel="stylesheet" type="text/css"/>
-
-<!-- XLSX 라이브러리 추가 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
-  <!-- XLSX 라이브러리 추가 -->
-
-
-  <!-- XLSX 테이블 스타일 -->
-  <style>
-  /* 첫 번째 행의 스타일 따로 지정 추가 */
-     tr:nth-child(1) {
-      background-color: gray; /* 배경색 */
-      color: black; /* 글꼴 색상 */
-      font-weight: bold; /* 글꼴 굵기 */
-      text-align: center; /* 적용안됨??? */
-    }
-  /* 첫 번째 행의 스타일 따로 지정 추가 */
-      
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      color: gray; /* 글꼴 색상 */
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 3px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    th:first-child,
-    td:first-child {
-      border-left: none;
-    }
-    th:last-child,
-    td:last-child {
-      border-right: none;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    tr:hover {
-      background-color: #f1f1f1;
+<style>
+    /* 링크 강조 스타일 */
+    .highlight {
+      background-color: white;
     }
   </style>
-  <!-- XLSX 테이블 스타일 -->
 
 </head>
 <body>
+    <header>
+    <nav>
+        <div id="horizontal-underline"></div>
+        <a href="index.html">HOME</a>
+        <a href="crypto.html" target="_top">CRYPTO</a>
+        <a href="youtube_music_ost.html" target="_top">OST</a>
+        <a href="youtube_music_pop.html" target="_top">POP</a>
+        <a href="board.html" target="_top">BOARD</a>
+        <a href="" target="_top"></a>
+    </nav>
+    </header>
+    <br><br><br>
 
-  <body>
-    
+<!-- HTML 링크된 문자 검색, 초기화 -->
 
-<!-- 뒤로가기 버튼 -->
-<button onclick="goBack()">Back</button>
-    
-
-
- <!-- XLSX 파일, 시트 추가 -->
-<div id="tableContainer"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.13/xlsx.full.min.js"></script>
+<input type="text" id="searchTerm" placeholder="Please enter a search term" size="20">
+<button onclick="search()">Search</button>
+<button onclick="resetSearch()">Reset</button>
 
 <script>
-  var hardcodedFileName = '../info.xlsx'; // 엑셀 파일명
-  var hardcodedSheetName = 'crypto'; // 시트명
-  var selectedColumn = 1; // 가져오고 싶은 특정 열의 인덱스 (예: 1번째 열)
-  var tableContainer = document.getElementById('tableContainer');
+    function search() {
+      var searchTerm = document.getElementById("searchTerm").value.toLowerCase();
 
-  fetch(hardcodedFileName)
-    .then(response => response.arrayBuffer())
-    .then(data => {
-      var workbook = XLSX.read(data, { type: 'array' });
-      var sheet = workbook.Sheets[hardcodedSheetName];
-      var sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+      // 검색 대상: content 영역
+      var contentLinks = document.getElementById("content").getElementsByTagName("a");
+      for (var i = 0; i < contentLinks.length; i++) {
+        var linkText = contentLinks[i].innerText.toLowerCase();
+        if (linkText.includes(searchTerm)) {
+          contentLinks[i].classList.add("highlight");
+          contentLinks[i].style.display = "inline-block";
+        } else {
+          contentLinks[i].classList.remove("highlight");
+          contentLinks[i].style.display = "none";
+        }
+      }
 
-      sheetData.forEach((rowData, rowIndex) => {
-        var cellDiv = document.createElement('div');
-        cellDiv.textContent = rowData[selectedColumn - 1];
+      // 검색 대상: menu 영역
+      var menuLinks = document.getElementById("menu").getElementsByTagName("a");
+      for (var j = 0; j < menuLinks.length; j++) {
+        var menuLinkText = menuLinks[j].innerText.toLowerCase();
+        if (menuLinkText.includes(searchTerm)) {
+          menuLinks[j].classList.add("highlight");
+          menuLinks[j].style.display = "inline-block";
+        } else {
+          menuLinks[j].classList.remove("highlight");
+          menuLinks[j].style.display = "none";
+        }
+      }
+    }
 
-        cellDiv.style.padding = '5px';
-      cellDiv.style.fontSize = '13px'; // 글자 크기
-      cellDiv.style.color = 'black'; // 글자 색상
-      cellDiv.style.backgroundColor = 'white'; // 배경색
+    function resetSearch() {
+      var allLinks = document.getElementsByTagName("a");
+      for (var k = 0; k < allLinks.length; k++) {
+        allLinks[k].classList.remove("highlight");
+        allLinks[k].style.display = "inline-block";
+      }
 
-      // 추가적인 스타일 적용 가능
-      // cellDiv.style.backgroundColor = 'lightgray';
-      // cellDiv.style.border = '1px solid black'; // 테두리
-      // cellDiv.style.padding = '8px'; // 안 여백
-      // cellDiv.style.margin = '4px'; // 바깥 여백 
-      // cellDiv.style.fontFamily = 'Arial, sans-serif'; // 글꼴
-
-        tableContainer.appendChild(cellDiv);
-      });
-    })
-    .catch(error => console.error(error));
-</script>
-<!-- XLSX 파일, 시트 추가 -->
+      document.getElementById("searchTerm").value = "";
+    }
+  </script>
+ <!-- HTML 링크된 문자 검색, 초기화 -->
 
 
 
+<br><br>
+
+    <div id="content">
+    
+    <a href="./crypto/1.Did you know that there is a way to add a 25th word to increase security when using a hard wallet.html">1.Did you know that there is a way to add a 25th word to increase security when using a hard wallet?
+    </a><br>
+    <a href="./crypto/2.About impermanent loss.html">2.About impermanent loss
+    </a><br>
 
 
-
+    </div>
+    
 
   
-  
 
-  
-</body>
-</html>
+  </script>
+
+
+    <!--
+    <div>
+        <p style="font-size: 20x;">I will post articles related to cryptocurrency.            
+        </p>
+
+        <p style="font-size: 20x;">
+        </p>
+       </div>-->
+                    
+        
+
+        
+    <h2></h2> <!-- 공백 -->
 
 </body>
 </html>
