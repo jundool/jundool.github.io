@@ -23,6 +23,25 @@
     }
   </style>
 
+
+<style>
+  /* 링크의 개수 표시 CSS 스타일을 여기에 추가 */
+  #linkCount {
+      font-size: 15px; /* 글자 크기 */
+      font-weight: bold; /* 굵기 */
+      color: black /* 색상 */
+    }
+</style>
+
+
+/* 링크간 br태그 제거후 여유로운 간격 조정 */
+<style>
+  #content a {
+      display: block;
+      margin-bottom: 10px; /* 여유로운 간격 조정 */
+  }
+</style>
+
 </head>
 <body>
     <header>
@@ -32,7 +51,7 @@
         <a href="crypto.html" target="_top">CRYPTO</a>
         <a href="youtube_music_ost.html" target="_top">OST</a>
         <a href="youtube_music_pop.html" target="_top">POP</a>
-        <a href="board.html" target="_top">BOARD</a>
+        
         <a href="" target="_top"></a>
     </nav>
     </header>
@@ -90,26 +109,38 @@
 
 
 <br><br>
+
+<p id="linkCount"></p>
+
+    
+
     <nav>
     <div id="content">
     
     <a href="./crypto/1.Did you know that there is a way to add a 25th word to increase security when using a hard wallet.html">(info1_2023-12-22) Did you know that there is a way to add a 25th word to increase security when using a hard wallet?
-    </a><br><br>
+    </a>
     <a href="./crypto/2.About impermanent loss.html">(info2_2023-12-23) About impermanent loss
-    </a><br><br>
+    </a>
 
 
     <a href="https://www.coindesk.com/consensus-magazine/2023/12/22/7-real-world-asset-trends-in-2024-that-will-unlock-the-future-of-finance/">(coindesk_2023-12-23) 7 Real World Asset Trends in 2024 That Will Unlock the Future of Finance (Stablecoins, tokenized treasuries, decentralized private credit, physical-backed NFTs, DeFi)
-    </a><br><br>
+    </a>
     <a href="https://www.ethnews.com/xrp-hbar-xlm-and-ada-iso-20022-compliant-for-trillion-dollar-markets/">(ethnews_2023-12-24) XRP, HBAR, XLM, and ADA: ISO 20022-Compliant for Trillion-Dollar Markets
-    </a><br><br>
+    </a>
 
     </div>
     </nav>
+
+    <script>
+      // 링크 목록을 갖고 있는 요소 선택
+      const content = document.getElementById('content');
+      // 해당 요소 안에 있는 링크들을 모두 선택
+      const links = content.getElementsByTagName('a');
+      // 링크의 개수를 세서 출력
+      document.getElementById('linkCount').innerText = `Number of list items: ${links.length}`;
+     </script>
+
   
-
-  </script>
-
 
     <!--
     <div>
