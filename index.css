@@ -44,7 +44,7 @@ table {
       padding: var(--gap);
       display: flex;
       gap: var(--gap);
-      min-height: 600px;
+      min-height: 750px;
       flex-direction: row;
     }
     
@@ -59,7 +59,7 @@ table {
     }
     
     .box-sidebar {
-      width: 70px;
+      width: 100px;
       flex-shrink: 0;
     }
     
