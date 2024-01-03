@@ -1,0 +1,167 @@
+/* 1.모든.html 에 대한 기본 css 요소적용 */
+div { color: black;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.5;
+      background-color: white;
+      padding: 0x;
+      margin: 5x;
+      border: 0px;
+     }
+/* 모든.html 에 대한 기본 css 요소적용 */
+
+
+
+/* 2.csv파일 목록 테이블 ost, pop 대한 css 요소적용 */
+table {
+      font-size: 13px; /* 원하는 크기로 설정 */
+  }
+/* csv파일 목록 테이블 ost, pop 대한 css 요소적용 */  
+
+
+  
+/* 3.index.html 메인파일에 사이드바 레이아웃 적용 작업_왼쪽 사이드메뉴 영역과 상단메뉴로 2개로 분할*/
+:root {
+      --gap: 1px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 1px auto;
+      left:0px;
+      top: 0px;
+    }
+    
+    body {
+      background-color: white;
+    }
+    
+    
+    .box {
+      background-color: white;
+      padding: var(--gap);
+      display: flex;
+      gap: var(--gap);
+      min-height: 750px;
+      flex-direction: row;
+    }
+    
+    .box.align_right {
+      flex-direction: row-reverse;
+    }
+    
+    .box-sidebar,
+    .box-contents {
+      background-color: white;
+      padding: var(--gap);
+    }
+    
+    .box-sidebar {
+      width: 95px;
+      flex-shrink: 0;
+    }
+    
+    .box-contents {
+      flex-grow: 1;
+      min-width: 0;
+    }
+/* 3.index.html 메인파일에 사이드바 레이아웃 적용 작업_왼쪽 사이드메뉴 영역과 상단메뉴로 2개로 분할*/
+
+
+/* 4.nav 이용한 메뉴 */
+    nav:first-child { /* first-child 첫번째 nav에 적용 */
+      display: flex;
+      justify-content: left;
+      margin-bottom: 10em;
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      
+  }
+  nav:nth-child(2){ 
+    /* nth-child(2) 두번째 nav에 적용, nth-child(3) 세번째 nav에 적용_추후 사용 */
+      display: flex;
+      align-items: center;
+      flex-direction: column; /* 가로방향을 수직으로 */
+  }
+  nav a {
+      text-decoration: none; /* 텍스트 밑줄 */
+      color:black;
+      margin: 0.5em; /* 텍스트간 공간 */
+      font-size: 1em;
+  }
+  
+  #horizontal-underline{
+      position: absolute;  /* 좌표 절대값 */
+      left:0px;
+      top: 0px;
+      height: 2px;
+      width: 100%;
+      border-radius: 3px;
+      transition: 0.5s;
+      background-color: pink;
+    
+  }
+  
+  #vertical-underline{
+      position: absolute;
+      left:0px;
+      top: 0px;
+      height: 100%;
+      width: 3px;
+      border-radius: 3px;
+      transition: 0.5s;
+      background-color: pink;
+  }
+ /* nav 이용한 메뉴 */   
+
+
+/* 5.nav 상단메뉴 고정 */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px; /* 네비게이션 메뉴의 높이 조정 */
+  background-color: white;
+  color: black;
+  padding: 0px ;
+}
+/* 5.nav 상단메뉴 고정 */
+
+
+/* 6.버튼 스타일 */
+button {
+  padding: 2px 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px; /* 버튼 간격 설정 */
+}
+button:hover {
+  background-color: #45a049;
+}
+/* 6.버튼 스타일 */
+
+
+/* 7.contanat.html 폼 스타일 */
+form {
+  /* 폼 전체의 글자 크기 설정 */
+  font-size: 13px;
+}
+
+/* 각각의 입력 요소들에 대한 글자 크기 설정 */
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 13px;
+  /* 원하는 크기로 조정해주세요 */
+}
+
+input[type="submit"] {
+  font-size: 13px;
+  /* 제출 버튼의 글자 크기 설정 */
+}
+/* 7.contanat.html 폼 스타일 */
