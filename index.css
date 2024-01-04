@@ -100,7 +100,7 @@ table {
       display: none;   /* pc환경 768px 이상에서는 숨김_반응형 앱에서 설정에서 모바일 768px 이하에서는 보임*/
       position: absolute;
       right: 132px;
-      font-size: 17px;
+      font-size: 24px;
       color: #4CAF50;
     }
     
