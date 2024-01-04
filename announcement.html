@@ -9,25 +9,49 @@
     
     <title>Document</title>
 
-    <link href="index.css" rel="stylesheet" type="text/css"/>
-    <script src="index.js"></script>
+    <link rel="icon" type="image/png" href="jun.png">
 
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+
+    <!-- 폰트어썸 라이브러리 -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+  <style>
+    /* 링크된 텍스트의 기본 스타일 설정 */
+    a {
+        font-size: 13px; /* 링크된 텍스트의 기본 크기 설정 */
+        /* 다른 원하는 스타일도 추가 가능 */
+    }
+    
+</style>
     
 </head>
 <body>
 
     <header>
-        <nav>
-            <div id="horizontal-underline"></div>
-            <a href="index.html">HOME</a>
-            <a href="crypto.html" target="_top">CRYPTO</a>
-            <a href="youtube_music_ost.html" target="_top">OST</a>
-            <a href="youtube_music_pop.html" target="_top">POP</a>
-            
-            <a href="" target="_top"></a>
+        <nav class="top_menu">
+          <ul class="top_menu_1">
+              <li><a href="index.html"><font color="black">HOME</font></font></a></li>
+              <li><a href="crypto.html" target="_top"><font color="black">CRYPTO</font></a></li>
+              <li><a href="youtube_music_ost.html" target="_top"><font color="black">OST</font></a></li>
+              <li><a href="youtube_music_pop.html" target="_top"><font color="black">POP</font></a></li>
+          </ul>
+      
+          <!-- 메뉴 추가 사용시 -->
+          <!-- <ul class="top_menu_2">
+          </ul> --> 
+          
+          <!-- 앱반응형 메뉴 토글버튼-->
+          <a href="#" class="top_menu_tooglebutton">
+            <i class="fas fa-bars"></i>
+          </a>
+        
         </nav>
-        </header>
-        <br><br>
+      </header>
+        <br><br><br><br>
         <center><h3>Announcement</h3></center>
         <br>
     
