@@ -11,8 +11,8 @@ div { color: var(--text-color);
       border: 0px;
      }
 
-body {   /* 하단부분 */
-      margin: 0;
+body {   /* 하단부분_전체 내용 여백 */
+      margin: 10px;
       background-color: var(--background-color);
     }
 
@@ -21,7 +21,7 @@ a {
    color:gray; 
     }
 nav {
-   margin: 3px;
+   margin: 0px;
    color:black; 
     }    
 nav a {
@@ -33,10 +33,10 @@ input {
       margin: 0;
 }   
 button {  
-        margin: 3px;
+        margin: 0px;
         }   
 h5 { 
-    margin: 5px;
+    margin: 0px;
 }
 
 
