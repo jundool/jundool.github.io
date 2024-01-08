@@ -114,7 +114,7 @@ table {
     }
     
     .left_sidebar {
-      width: 90px;
+      width: 95px;
       flex-shrink: 0;
     }
 
@@ -125,7 +125,7 @@ table {
     }
     .left_menu_1 li {
       padding: 0px 0px;
-      font-size: 12px;
+      font-size: 13px;
     }
     .left_menu_1 li:hover {  /* 마우스 올리면 색깔 변함 #ddd */
       background-color: var(--accent-coclr) ;
