@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="Javascript, Liquidity Pool, Profit-Loss, Impermanent Loss, Calculation, crypto">
+   
+    <!-- 모바일 사이트 주소부분 색상변경 코드 -->
+    <meta name="theme-color" content="#4CAF50">
+        
+          <title>Impermanent Loss Calculation</title>
+          <script src="Liquidity_Pool_Supply_Impermanent-Loss_Calculation.js"></script>
+
+  <link rel="icon" type="image/png" href="../../jun.png">
+
+    <link rel="stylesheet" href="../../index.css">
+    <script src="../../index.js" defer></script>
+
+    <!-- 폰트어썸 라이브러리 -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+  <style>
+    /* 링크된 텍스트의 기본 스타일 설정 */
+    a {
+        font-size: 13px; /* 링크된 텍스트의 기본 크기 설정 */
+        /* 다른 원하는 스타일도 추가 가능 */
+    }
+    
+</style>
+        <style>
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            
+          }
+      
+          .input-box {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-bottom: 0px;
+            width: 390px;
+            border-radius: 4px;
+          }
+      
+          .results-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            width: 380px;
+            border-radius: 4px;
+          }
+      
+          .results-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            width: 350px;
+          }
+      
+          .result-item {
+            margin-bottom: 5px;
+          }
+
+
+/* 추가 부분 */
+    body {
+      margin: 5px;
+      padding: 5px;
+    }
+    
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 2px;
+      padding: 5px;
+    }
+    
+    
+        </style>
+      </head>
+<body>
+  <header>
+    <nav class="top_menu">
+      <ul class="top_menu_1">
+          <li><a href="../../index.html"><font color="black">HOME</font></font></a></li>
+          <li><a href="../../crypto.html" target="_top"><font color="black">CRYPTO</font></a></li>
+          <li><a href="../../youtube_music_ost.html" target="_top"><font color="black">OST</font></a></li>
+          <li><a href="../../youtube_music_pop.html" target="_top"><font color="black">POP</font></a></li>
+      </ul>
+  
+      <!-- 메뉴 추가 사용시 -->
+      <!-- <ul class="top_menu_2">
+      </ul> --> 
+      
+      <!-- 앱반응형 메뉴 토글버튼-->
+      <a href="#" class="top_menu_tooglebutton">
+        <i class="fas fa-bars"></i>
+      </a>
+    
+    </nav>
+  </header>
+  <br><br><br><br><br>
+      <div>
+        Caution<br>
+        1. Fees, rewards, trading volume, asset price volatility, market conditions, percentage of assets in the pool and other variables are not taken into account.<br>
+        2. This is a tool that provides temporary profit/loss calculations and impermanent loss estimates and does not represent exact returns.<br>
+        Actual returns may vary due to market volatility and various influencing factors.<br><br>
+           
+        Refer to Uniswap V1 for reconciliation calculations. x * y = k (constant product formula)<br>
+
+        This calculator estimates the expected profit and impermanent loss rate when depositing two coins into a liquidity pool to provide liquidity.<br>
+        When depositing into the liquidity pool, you can check the results by entering the quantity of coins A and B, the initial dollar price, and the changed (current, future) dollar price and then clicking 'Calculate'.<br>
+        Liquidity pools assume that the ratio is adjusted close to 1:1 according to price fluctuations.<br>
+        Due to changes in the dollar value of each coin and changes in coin quantity, the price may fluctuate when deposited into the liquidity pool, and profits and losses may vary when supplying the liquidity pool.<br>
+        I also hope this helps you understand roughly how impermanent loss occurs.</div>
+
+        <h4>Liquidity Pool Supply Impermanent-Loss Calculation</h4>
+    <div class="container">
+            
+        <div class="input-box">
+          
+          <h4>Coin A</h4>
+          <label for="coinA-initial-quantity">Coin A Initial Quantity:</label>
+          <input type="text" id="coinA-initial-quantity" value="100"><br>
+          
+          <label for="coinA-initial-price">Coin A Initial Price($):</label>
+          <input type="text" id="coinA-initial-price" value="0.1"><br>
+          
+          <label for="coinA-current-price">Coin A Current Price($):</label>
+          <input type="text" id="coinA-current-price"value="0.1"><br>
+          
+
+          
+          <h4>Coin B</h4>
+          <label for="coinB-initial-quantity">Coin B Initial Quantity:</label>
+          <input type="text" id="coinB-initial-quantity" value="100"><br>
+          
+          <label for="coinB-initial-price">Coin B Initial Price($):</label>
+          <input type="text" id="coinB-initial-price" value="0.1"><br>
+          
+          <label for="coinB-current-price">Coin B Current Price($):</label>
+          <input type="text" id="coinB-current-price" value="0.1"><br><br>
+        
+
+    <button onclick="calculate()">Calculate</button>
+    <button onclick="resetFields()">Reset</button><br><!-- 리셋 버튼 추가 -->
+    
+        </div>
+    
+             
+        <br>
+        <div class="results-box" id="results">
+       
+          <div class="results-title">Results:</div>
+           
+        </div>
+      
+      <!-- <footer>
+          <p>&copy; 2024 jundool. All Rights Reserved.</p>
+      </footer> -->
+    
+</body>
+</html>
