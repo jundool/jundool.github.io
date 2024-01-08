@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>jundool</title>
+    <link>https://jundool.github.io/</link>
+    <description>This website serves as a space to collect and continuously update information on topics I am interested in, such as cryptocurrency, physical gold and silver, and good music and movies</description>
+    <item>
+      <title>Impermanent-Loss</title>
+      <link>https://jundool.github.io/javascript/01_Impermanent-Loss_Calculation/Liquidity_Pool_Supply_Impermanent-Loss_Calculation.html</link>
+      <description>
+Liquidity Pool Supply Impermanent-Loss Calculation
+</description>
+      <pubDate>2024-01-09</pubDate>
+    </item>
+<item>
+      <title>CRYPTO</title>
+      <link>https://jundool.github.io/crypto.html</link>
+      <description>crypto, crypto news</description>
+      <pubDate>2023-12-23</pubDate>
+    </item>
+<item>
+      <title>OST</title>
+      <link>https://jundool.github.io/ost.html</link>
+      <description>ost</description>
+      <pubDate>2024-01-04</pubDate>
+    </item>
+<item>
+      <title>POP</title>
+      <link>https://jundool.github.io/pop.html</link>
+      <description>pop</description>
+      <pubDate>2024-01-09</pubDate>
+    </item>
+
+    <!-- More items -->
+  </channel>
+</rss>
