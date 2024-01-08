@@ -30,8 +30,6 @@ Due to changes in the dollar value of each coin and changes in the quantity of c
 I also hope this helps you understand roughly how impermanent loss occurs.
 */   
 function calculate() {
-    
-        function calculate() {
     // Get input values
     const coinAInitialQuantity = parseFloat(document.getElementById('coinA-initial-quantity').value);
     const coinAInitialPrice = parseFloat(document.getElementById('coinA-initial-price').value);
@@ -107,3 +105,4 @@ document.getElementById('coinB-initial-price').value = '0.1';
 document.getElementById('coinB-current-price').value = '0.1';
 document.getElementById('results').innerHTML = '<div class="results-title">Results:</div>';
 }
+  
