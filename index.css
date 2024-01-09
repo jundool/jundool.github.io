@@ -12,7 +12,7 @@ div { color: var(--text-color);
      }
 
 body {   /* 하단부분_전체 내용 여백영향 */
-      margin: 10px;
+      margin: 22px;
       background-color: var(--background-color);
     }
 
@@ -218,12 +218,16 @@ input[type="submit"] {
 
 
 /* 7.하단에 고정된 요소 스타일 추가*/
-footer {
+#copyright-frame {
   position: fixed;
   bottom: 0;
-  width: 98%;
-  background-color: WHITE;
-  padding: 0px 0;
+  width: 97%;
+  height: 20px; /* 높이는 필요에 따라 조정할 수 있습니다. */
+  background-color: #f0f0f0;
+  border-top: 0px solid #ccc;
+}
+#copyright-content {
   text-align: right;
+  line-height: 20px;
   font-size: 12px;
 }
