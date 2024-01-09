@@ -12,7 +12,7 @@ div { color: var(--text-color);
      }
 
 body {   /* 하단부분_전체 내용 여백영향 */
-      margin: 22px;
+      margin: 24px;  /* 7.하단에 고정된 요소 스타일 추가에 영향*/
       background-color: var(--background-color);
     }
 
