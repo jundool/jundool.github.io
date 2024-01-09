@@ -12,7 +12,7 @@ div { color: var(--text-color);
      }
 
 body {   /* 하단부분_전체 내용 여백영향 */
-      margin: 24px;  /* 7.하단에 고정된 요소 스타일 추가에 영향*/
+      margin: 20px;  /* 7.하단에 고정된 요소 스타일 추가에 영향*/
       background-color: var(--background-color);
     }
 
@@ -64,6 +64,7 @@ table {
     
     .container {
       max-width: 1200px;
+      height: 780px;    
       margin: 0;
       left: 0px;
       top: 0px;
@@ -109,7 +110,7 @@ table {
       padding: var(--gap);
       display: flex;
       gap: var(--gap);
-      min-height: 750px;
+      min-height: 780px;
       flex-direction: row;
     }
     
