@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <meta name="keywords" content="Javascript, weight convert">
+       
+        <!-- 모바일 사이트 주소부분 색상변경 코드 -->
+        <meta name="theme-color" content="#4CAF50">
+        
+    <title>Byte Converter</title>
+    <script src="Liquidity_Pool_Supply_Impermanent-Loss_Calculation.js"></script>
+
+    <link rel="icon" type="image/png" href="../../jun.png">
+  
+      <link rel="stylesheet" href="../../index.css">
+      <script src="../../index.js" defer></script>
+      <script src="02_byte_converter.js" defer></script>
+  
+      <!-- 폰트어썸 라이브러리 -->
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <style>
+      /* 링크된 텍스트의 기본 스타일 설정 */
+      a {
+          font-size: 12px; /* 링크된 텍스트의 기본 크기 설정 */
+          /* 다른 원하는 스타일도 추가 가능 */
+      }
+      
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+      margin: 20x;
+      font-size: 11px;
+        }
+
+        .converter-box {
+            max-width: 200px;
+      margin: 0px ;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+      text-align: center;
+    }
+
+        label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+        input, select, button {
+      /*width: 100%;*/
+      padding: 1px;
+      margin-bottom: 1px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+        
+        /* 입력창과 셀렉트 박스 크기 조절 */
+    input[type="number"],
+    select {
+      width: 180px;
+      height: 25px;
+      padding: 1px;
+      margin: 1x;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    /* 버튼 스타일 수정 */
+    #convertButton {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 11px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <!-- 뒤로가기 버튼 -->
+<button onclick="goBack()">Back</button>
+<br><br><br><br><br><br><br>
+
+    <div class="converter-box">
+        <center><h3>Byte Converter</h3></center>
+        <form>
+            <label for="inputValue">Enter Value:</label>
+            <input type="number" id="inputValue" placeholder="Enter value" required><br><br>
+
+            <label for="fromUnit">From Unit:</label>
+            <select id="fromUnit">
+                <option value="bit">bit</option>
+                <option value="byte">byte</option>
+                <option value="KB">KB</option>
+                <option value="MB">MB</option>
+                <option value="GB">GB</option>
+                <option value="TB">TB</option>
+                <option value="PB">PB</option>
+                <option value="EB">EB</option>
+            </select><br><br>
+
+            <label for="toUnit">To Unit:</label>
+            <select id="toUnit">
+                <option value="bit">bit</option>
+                <option value="byte">byte</option>
+                <option value="KB">KB</option>
+                <option value="MB">MB</option>
+                <option value="GB">GB</option>
+                <option value="TB">TB</option>
+                <option value="PB">PB</option>
+                <option value="EB">EB</option>
+            </select><br><br>
+
+            <button type="button" id="convertButton" onclick="convertBytes()">Convert</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    
+
+Kilobyte, megabyte, gigabyte, terabyte, petabyte, exabyte<br>
+This unit is exactly 1000.<br>
+Since adding one more unit becomes complicated, <br>it is calculated using 1024 for convenience.<br><br>
+
+<img src="02_byte_converter.jpg" alt="byte_converter">
+       </a> 
+
+
+<!-- 하단 아이프레임 -->
+<div id="copyright-frame">
+    <div id="copyright-content">
+        &copy; 2024 jundool. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>
