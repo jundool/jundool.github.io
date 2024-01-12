@@ -90,7 +90,25 @@
       margin: 4px 2px;
       cursor: pointer;
     }
-    </style>
+ 
+/* 테이블 추가 */
+
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 1px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
 </head>
 <body>
     <!-- 뒤로가기 버튼 -->
@@ -134,13 +152,113 @@
     </div>
 
     
-
+<div>
 Kilobyte, megabyte, gigabyte, terabyte, petabyte, exabyte<br>
 This unit is exactly 1000.<br>
 Since adding one more unit becomes complicated, <br>it is calculated using 1024 for convenience.<br><br>
-
-
-
+<table>
+  <thead>
+  <tr>
+  <th>SI</th>
+  <th>Decimal</th>
+  <th>10^n</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>KB (kilobyte)</td>
+  <td>1,000</td>
+  <td>10^3 (Thousand)</td>
+  </tr>
+  <tr>
+  <td>MB (megabyte)</td>
+  <td>1,000,000</td>
+  <td>10^6 (Million)</td>
+  </tr>
+  <tr>
+  <td>GB (gigabyte)</td>
+  <td>1,000,000,000</td>
+  <td>10^9 (Billion)</td>
+  </tr>
+  <tr>
+  <td>TB (terabyte)</td>
+  <td>1,000,000,000,000</td>
+  <td>10^12 (Trillion)</td>
+  </tr>
+  <tr>
+  <td>PB (petabyte)</td>
+  <td>1,000,000,000,000,000</td>
+  <td>10^15 (One Quadrillion)</td>
+  </tr>
+  <tr>
+  <td>EB (exabyte)</td>
+  <td>1,000,000,000,000,000,000</td>
+  <td>10^18 (One Quintillion)</td>
+  </tr>
+  <tr>
+  <td>ZB (zettabyte)</td>
+  <td>1,000,000,000,000,000,000,000</td>
+  <td>10^21 (One Sextillion)</td>
+  </tr>
+  <tr>
+  <td>YB (yottabyte)</td>
+  <td>1,000,000,000,000,000,000,000,000</td>
+  <td>10^24 (One Septillion)</td>
+  </tr>
+  </tbody>
+  </table>
+  <table>
+  <thead>
+  <tr>
+  <th>IEC</th>
+  <th>Binary</th>
+  <th>2^n</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>KIB (kibibyte)</td>
+  <td>1,024</td>
+  <td>2^10 (Thousand)</td>
+  </tr>
+  <tr>
+  <td>MIB (mebibyte)</td>
+  <td>1,048,576</td>
+  <td>2^20 (Million)</td>
+  </tr>
+  <tr>
+  <td>GIB (gibibyte)</td>
+  <td>1,073,741,824</td>
+  <td>2^30 (Billion)</td>
+  </tr>
+  <tr>
+  <td>TIB (tebibyte)</td>
+  <td>1,099,511,627,776</td>
+  <td>2^40 (Trillion)</td>
+  </tr>
+  <tr>
+  <td>PIB (pebibyte)</td>
+  <td>1,125,899,906,842,624</td>
+  <td>2^50 (One Quadrillion)</td>
+  </tr>
+  <tr>
+  <td>EIB (exbibyte)</td>
+  <td>1,152,921,504,606,846,976</td>
+  <td>2^60 (One Quintillion)</td>
+  </tr>
+  <tr>
+  <td>ZIB (zebibyte)</td>
+  <td>1,180,591,620,717,411,303,424</td>
+  <td>2^70 (One Sextillion)</td>
+  </tr>
+  <tr>
+  <td>YIB (yobibyte)</td>
+  <td>1,208,925,819,614,629,174,706,176</td>
+  <td>2^80 (One Septillion)</td>
+  </tr>
+  </tbody>
+  </table>
+</div>
 
 <!-- 하단 아이프레임 -->
 <div id="copyright-frame">
