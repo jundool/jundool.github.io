@@ -30,7 +30,26 @@ Liquidity Pool Supply Impermanent-Loss Calculation
       <description>pop</description>
       <pubDate>2024-01-09</pubDate>
     </item>
+<item>
+      <title>Weight_Convert</title>
+      <link>https://jundool.github.io/javascript/02_conversion_calculator/01_weight_convert.html</link>
+      <description>Weight_Convert</description>
+      <pubDate>2024-01-09</pubDate>
+    </item>   
+<item>
+      <title>Byte Converter</title>
+      <link>https://jundool.github.io/javascript/02_conversion_calculator/02_byte_converter.html</link>
+      <description>Byte Converter</description>
+      <pubDate>2024-01-09</pubDate>
+    </item>       
+<item>
+      <title>CLASSIC</title>
+      <link>https://jundool.github.io/classic.html</link>
+      <description>classic</description>
+      <pubDate>2024-01-12</pubDate>
+    </item>
 
+    
     <!-- More items -->
   </channel>
 </rss>
