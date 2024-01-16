@@ -128,13 +128,15 @@ table {
       padding: 0px 0px;
       font-size: 13px;
     }
-    .left_menu_1 li:hover {  /* 마우스 올리면 색깔 변함 #ddd */
-      background-color: var(--accent-coclr) ;
-      border-radius: 4px;
+    .left_menu_1 li a:hover {  /* 마우스 올리면 색깔 변함 #ddd */
+      /*background-color: var(--accent-coclr) ;
+      border-radius: 4px;*/
+      color: orange
     }
-    .top_menu_1 li:hover {  
-      background-color: var(--accent-coclr);
-      border-radius: 4px;
+    .top_menu_1 li a:hover {  
+      /*background-color: var(--accent-coclr);
+      border-radius: 4px;*/
+      color: orange
     }
     
 
