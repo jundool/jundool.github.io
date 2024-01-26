@@ -89,7 +89,6 @@
 <!-- HTML 링크된 문자 검색, 초기화 -->
 <input type="text" id="searchTerm" placeholder="Please enter a search term" size="20">
 <button onclick="search()">Search</button>
-<button onclick="resetSearch()">Reset</button>
 <button onclick="refreshPage()">Refresh</button><br>    
 <br><br>
 
@@ -128,15 +127,7 @@
       }
     }
 
-    function resetSearch() {
-      var allLinks = document.getElementsByTagName("a");
-      for (var k = 0; k < allLinks.length; k++) {
-        allLinks[k].classList.remove("highlight");
-        allLinks[k].style.display = "inline-block";
-      }
-
-      document.getElementById("searchTerm").value = "";
-    }
+    
   </script>
  <!-- HTML 링크된 문자 검색, 초기화 -->
 
